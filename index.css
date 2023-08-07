@@ -29,11 +29,11 @@ body{
     /* border: 2px solid red; */
     /* background-color: white; */
     box-shadow: -2px 4px 5px 12px rgb(0 0 0 / 53%);
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
 }
 
 .adding-text-list form{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
 }
 #todo-form{
     display: flex;
@@ -58,7 +58,7 @@ input::after {
 .adding-text-list input{
     width: 90%;
     padding: 10px;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     border-radius: 10px;
     border: none;
     background-color: transparent;
@@ -95,7 +95,7 @@ input:focus {
     justify-content: space-between;
     border-bottom: 2px solid grey;
     /* border: 2px solid red; */
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     font-weight: bold;
 }
 .task-checkbox{
@@ -116,4 +116,24 @@ input:focus {
 
 .delete-part{
     padding: 15px;
+}
+@media (max-width: 1000px) {
+    /* Add styles for screens less than 1000px */
+    body{
+        background-size: auto;
+    }
+    .container{
+        width: 80%;
+        margin: auto;
+    
+    }
+}
+@media (max-width: 600px) {
+    /* Add styles for screens less than 1000px */
+    .container{
+        width: 90%;
+        margin: auto;
+    
+    }
+    
 }
