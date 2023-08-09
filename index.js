@@ -5,14 +5,13 @@ const allCheck = document.getElementById('all-check');
 
 
 
-todoForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+const addTaskBtn = document.getElementById("add-task-btn");
+addTaskBtn.addEventListener("click", () => {
     const taskText = taskInput.value.trim();
     console.log(taskText);
     taskInput.value = "";
     if (taskText !== "") {
         createTask(taskText);
-        
     }
 });
 
