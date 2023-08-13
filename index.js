@@ -3,7 +3,13 @@ const taskInput = document.getElementById("task-input");
 const taskList = document.getElementById("task-list");
 const allCheck = document.getElementById('all-check');
 
-
+//updating task count with each addition of task
+function updateTaskCount() {
+    const taskCountDiv = document.getElementById("task-count");
+    const taskCount = document.querySelectorAll('.task').length;
+    console.log(taskCount);
+    taskCountDiv.textContent = `Total Tasks: ${taskCount}`;
+}
 
 const addTaskBtn = document.getElementById("add-task-btn");
 addTaskBtn.addEventListener("click", () => {
@@ -12,6 +18,7 @@ addTaskBtn.addEventListener("click", () => {
     taskInput.value = "";
     if (taskText !== "") {
         createTask(taskText);
+        updateTaskCount();
     }
 });
 
@@ -45,6 +52,7 @@ function createTask(text) {
         
         if(checkbox.checked){
         taskDiv.remove();
+        updateTaskCount()
         }
     });
     deletePart.appendChild(deleteIcon);
@@ -66,7 +74,7 @@ allCheck.addEventListener("click", () => {
         checkboxes.forEach(checkbox => {
             checkbox.checked = !anyChecked;
         });
-        allCheck.style.color = anyChecked ? "black" : "green";
+        allCheck.style.color = anyChecked ? "white" : "green";
     
 });
 
@@ -82,9 +90,10 @@ deleteAllButton.addEventListener("click", () => {
             checkbox.closest('.task').remove();
         }
     });
-    allCheck.style.color = "black";
+    updateTaskCount();
+    allCheck.style.color = "white";
     setTimeout(() => {
-        deleteAllButton.style.color = "black";
+        deleteAllButton.style.color = "white";
     }, 500); 
     
 });
